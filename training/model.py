@@ -1,14 +1,21 @@
-# -*- coding: utf-8 -*-
-
 from sklearn.utils import shuffle
 from cv2 import imread, cvtColor, resize, filter2D, medianBlur
 from cv2 import COLOR_BGR2GRAY
 from os import listdir
 import numpy as np
-# import matplotlib.pyplot as plt
 
-# Sizes 125, 150
+# Image size to input to the model
 newSize = 150
+
+################################################## Data Preperation Start ##################################################
+##############
+#### Data Preperation includes the following steps:
+#    1- Read the image
+#    2- Convert into grayscale
+#    3- Sharpen the image
+#    4- Normalize pixel values
+#    5- Appending the processed image to its coressponding category's array (train, validation, test)
+#    6- Append the coressponding dependant variable value (in case of training and validation)
 
 # Training data preperations
 train_loc = 'aug_testing/augments_dir/Merged/'
@@ -18,6 +25,7 @@ ytrain = []
 
 for image_name in listdir(train_loc):
     img = imread(train_loc + image_name)
+
     img = cvtColor(img, COLOR_BGR2GRAY)
 
     kernel = np.array([[-1/9,-1/9,-1/9], [-1/9,1,-1/9], [-1/9,-1/9,-1/9]])
@@ -25,7 +33,9 @@ for image_name in listdir(train_loc):
     img = medianBlur(img, 3)
 
     img = img/255.
+
     img = np.expand_dims(img, 2)
+
     xtrain.append(img)
     ytrain.append(0 if 'norm' in image_name else 1)
 
@@ -81,7 +91,7 @@ xtest, ytest = np.asarray(xtest), np.asarray(ytest)
 
 
 ######################################### data preperation end #########################################
-# plt.imshow(np.squeeze(img), cmap='gray')
+
 ######################################### model creation start #########################################
 
 
@@ -89,10 +99,11 @@ from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from keras.layers import Dropout, Flatten, Dense
 from keras.callbacks import EarlyStopping
-# from keras import regularizers
 from sklearn.metrics import confusion_matrix, accuracy_score
 
+# Define early stopping callback
 es = EarlyStopping(monitor='val_acc', restore_best_weights=True, patience=5)
+
 
 model = Sequential()
 
@@ -175,11 +186,4 @@ predictions = 1*(predictions >= .65)
 cm = confusion_matrix(ytest, predictions)
 
 acc = accuracy_score(ytest, predictions)
-
-
-# model.evaluate(xtrain, ytrain)
-
-# model.evaluate(xval, yval)
-
-# model.evaluate(xtest, ytest)
 

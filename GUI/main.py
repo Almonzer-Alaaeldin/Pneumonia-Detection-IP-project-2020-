@@ -14,7 +14,7 @@ img = ''
 ########### Helper Functions ###########
 
 def dignose_case(image_path):
-    ''' Process Image and Predict'''
+    ''' Process Image and Predict result'''
     global img
     img = imread(image_path)
     img = resize(cvtColor(img, COLOR_BGR2GRAY), (150, 150))

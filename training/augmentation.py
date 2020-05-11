@@ -6,7 +6,6 @@ from cv2 import resize
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import ImageDataGenerator
-# from matplotlib import pyplot
 from os import listdir
 
 
