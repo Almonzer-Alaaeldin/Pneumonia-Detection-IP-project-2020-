@@ -1,6 +1,20 @@
-# Demo Link
+# Team NULL
+
+## Team Members
+* Almonzer Alaaeldin Mostafa
+* Matthew Emile
+* Martina Osama
+* Marco Mohsen Younan
+* Mohamed Sherif
+
+## Team Contribution
+* almonzer, mathew and martina: dataset augmentation, model creation and training
+* marko and mohamed: GUI creation, prediction results and testing
+
+## Demo Link
 * [Demo](https://drive.google.com/open?id=1GfbK2KapEMfR1jq3f-BpkzKXOf_33_k5)
-# Introduction
+
+## Introduction
 Corona (Covid-19) virus is a global pandemic threatening all countries with its virality and quick spread, so much so that there is not enough specialists or equipment to effectively detect patients with covid-19 to be able to supply proper measures and treatments for them.
 
 so this project is aimed at facilitating the process of filtering potential covid-19 patients for further inspections as pneumonia is a common symptom for those affected with covid-19 (similar to SARS-Cov and MERS-Cov).
@@ -11,7 +25,7 @@ Although pneumonia isn’t a symptom that certainly identifies a corona patient 
 
 So, this project’s goal is to be able to quickly identify pneumonia patients without the aid of doctors and specialists in an effort to speed up check-ups and perhaps even allowing for less crowding at clinics and hospitals.
 
-# Project Folders
+## Project Folders
 * GUI: This folder is the main folder and it contains the following files:
   * dialogue.ui: This file contains the user interface generated through qt creator representing the main app's ui.
   * main.py: This file contains the main logic behind the app's functionality.
@@ -26,7 +40,7 @@ So, this project’s goal is to be able to quickly identify pneumonia patients w
   * Normal: Contains images of healthy patients' xrays.
   * Pneumonia: Contains images of pneumonic patients' xrays.
 
-# Testing the project
+## Testing the project
 1. Download the repo.
 2. Navigate to the GUI folder.
 3. In a terminal or a cmd prompt run: python main.py
