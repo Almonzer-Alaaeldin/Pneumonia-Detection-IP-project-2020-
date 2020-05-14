@@ -45,3 +45,5 @@ So, this project’s goal is to be able to quickly identify pneumonia patients w
 2. Navigate to the GUI folder.
 3. In a terminal or a cmd prompt run: python main.py
 4. After the program starts up just browse for the image to test ("examples" folder exists for simplicity) and the result will show up in the middle of the ui window.
+
+**Or** download the folder [here](https://drive.google.com/open?id=1geE57ieqZyVbKxQeqnSvOjEM98n1w33L) and run main.exe in it
